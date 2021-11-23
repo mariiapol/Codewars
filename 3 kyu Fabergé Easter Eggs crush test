@@ -1,0 +1,8 @@
+def height(n, m): 
+    h, k = 0, 1
+    for i in range(n):
+        #Binomial coefficient
+        k = k * m // (i+1)
+        h += k
+        m -= 1
+    return h
