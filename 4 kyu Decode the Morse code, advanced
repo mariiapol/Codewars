@@ -1,0 +1,11 @@
+def decode_bits(bits):
+    #Accept 0's and 1's, return dots, dashes and spaces
+    bits = bits.strip('0')
+    l = min([len(s) for s in bits.split('1') + bits.split('0') if s])
+    return (bits.replace( '111' * l, '-').replace('1' * l, '.').replace('0000000' * l, '   ').replace('000' * l, ' ').replace('0' * l, ''))
+
+    
+
+def decode_morse(morseCode):
+    #Accept dots, dashes and spaces, return human-readable message
+     return ' '.join(''.join(MORSE_CODE[l] for l in word.split()) for word in morseCode.strip().split("   "))
